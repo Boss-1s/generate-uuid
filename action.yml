@@ -39,7 +39,7 @@ runs:
     - name: setup python
       uses: actions/setup-python@v6
       with:
-        version: '3.9'
+        python-version: '3.9'
 
     - name: Generate UUID
       id: generate
