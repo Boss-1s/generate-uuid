@@ -3,10 +3,14 @@ import secrets
 import os
 import random
 import time
+import warnings
 
 # i refuse to use uuid.uuid7() lol
 
-OUTPUT = ''
+if os.environ.get("NAMESPACE"):
+    warnings.warn("No namespace or name needed for this version",
+                  UserWarning)
+    print("::warning:: No namespace or name needed for this version")
 
 def insert(og: str,
            ins: str,
