@@ -29,3 +29,5 @@ jobs:
       uses: bossOfCode/generate-uuid@main
       with:
         version: ${{matrix.uuidv}}
+        name: "test123"
+        namespace: "DNS"
