@@ -7,7 +7,7 @@ import warnings
 
 # i refuse to use uuid.uuid7() lol
 
-if os.environ.get("NAMESPACE"):
+if os.environ.get("INPUT_NAMESPACE"):
     warnings.warn("No namespace or name needed for this version",
                   UserWarning)
     print("::warning:: No namespace or name needed for this version")
