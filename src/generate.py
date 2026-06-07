@@ -22,6 +22,18 @@ print_in_os(f"Version: {VERSION}")
 
 if VERSION in versions or namespace in namespaces:
     if VERSION in ["3", "5"]:
+        match namespace:
+            case "DNS":
+                namespace = uuid.NAMESPACE_DNS
+            case "URL":
+                namespace = uuid.NAMESPACE_URL
+            case "OID":
+                namespace = uuid.NAMESPACE_OID
+            case "X500":
+                namespace = uuid.NAMESPACE_X500
+            case _:
+                raise ValueError(f"ERROR: namespace cannot be '{namespace}'; must be either DNS, URL, OID, "
+                          + "or X500.")
         OUTPUT = UUIDTYP(name, namespace)
     else:
         if namespace or name:
