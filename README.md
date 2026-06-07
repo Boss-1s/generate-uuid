@@ -14,7 +14,7 @@ Generates a random UUID using the `uuid` module in python.
 
 * `name` - optional - string that will be used to create the UUID.
 
-Do note that `name` and `namespace` are usually used with only UUIDv1.
+Do note that `name` and `namespace` are used with only UUIDv3 and UUIDv5.
 
 ## Outputs
 
