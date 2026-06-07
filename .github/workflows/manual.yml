@@ -40,6 +40,6 @@ jobs:
       uses: actions/checkout@v6.0.2
 
     - name: test uuid generator
-      uses: bossOfCode/generate-uuid@v1.4.1
+      uses: bossOfCode/generate-uuid@main
       with:
         version: ${{ inputs.version == '' && '4' || inputs.version }}
