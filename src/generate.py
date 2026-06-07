@@ -13,12 +13,7 @@ OUTPUT = ""
 versions = ["1", "3", "4", "5", "6"]
 namespaces = ["DNS", "URL", "OID", "X500"]
 
-def print_in_os(argument):
-    "print in both terminal and action logs"
-    print(f"{argument}")
-    os.system(f"echo {argument}")
-
-print_in_os(f"Version: {VERSION}")
+print(f"Version: {VERSION}")
 
 if VERSION in versions or namespace in namespaces:
     if VERSION in ["3", "5"]:
@@ -34,7 +29,6 @@ if VERSION in versions or namespace in namespaces:
             case _:
                 raise ValueError(f"ERROR: namespace cannot be '{namespace}'; must be either DNS, URL, OID, "
                           + "or X500.")
-        print(namespace)
         OUTPUT = UUIDTYP(namespace,name)
     else:
         if namespace or name:
@@ -57,5 +51,5 @@ os.system(f"echo 'uuid={FINAL}' >> $GITHUB_OUTPUT")
 os.system(f"echo 'safe={SAFE}' >> $GITHUB_OUTPUT")
 
 if SAFE == "unsafe":
-    print_in_os("::warning title=UNSAFE::Your UUID may be unsafe for public use because" +
-                " it may contain some of your device's personal info.")
+    print("::warning title=UNSAFE::Your UUID may be unsafe for public use because" +
+          " it may contain some of your device's personal info.")
