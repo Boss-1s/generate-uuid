@@ -30,6 +30,8 @@ jobs:
       uses: bossOfCode/generate-uuid@main
       with:
         version: ${{ matrix.uuidv }}
+        name: "test123"
+        namespace: "DNS"
 
     - name: Print UUID
       run: echo ${{ steps.uuid.outputs.uuid }}
