@@ -8,13 +8,11 @@ Generates a random UUID using the `uuid` module in python.
 
 * `version` - REQIURED - Version of UUID to generate. Avaliable versions are 1, 3, 4, 5, 6, and 7.
 
-> Note: Version 1 may pose a safety risk because it uses your network info.
-
 * `namespace` - optional - namespace of the UUID. Can be DNS, URL, OID, or X500.
 
 * `name` - optional - string that will be used to create the UUID.
 
-Do note that `name` and `namespace` are used with only UUIDv3 and UUIDv5.
+Do note that `name` and `namespace` are used with only UUIDv3 and UUIDv5. If used with a version other than v3 or v5, stdout will output a warning.
 
 ## Outputs
 
