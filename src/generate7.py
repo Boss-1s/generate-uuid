@@ -32,7 +32,7 @@ UUID = insert(UUID, '-', 8) + '7'
 ADD = secrets.token_hex(2)[:3]
 UUID = UUID + ADD + '-'
 
-UUID = UUID + random.randint(8, 11).hex()
+UUID = UUID + hex(random.randint(8, 11))
 
 ADD = secrets.token_hex(2)[:3]
 UUID = UUID + ADD + '-'
