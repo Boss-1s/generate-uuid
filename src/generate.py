@@ -35,7 +35,7 @@ if VERSION in versions or namespace in namespaces:
                 raise ValueError(f"ERROR: namespace cannot be '{namespace}'; must be either DNS, URL, OID, "
                           + "or X500.")
         print(namespace)
-        OUTPUT = UUIDTYP(name, namespace)
+        OUTPUT = UUIDTYP(name, fb"{namespace}")
     else:
         if namespace or name:
             warnings.warn("No namespace or name needed for this version",
