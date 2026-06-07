@@ -27,13 +27,12 @@ EPOCHMILLI = format(EPOCH, 'x')
 
 UUID = '0' + EPOCHMILLI + '-'
 
-
 UUID = insert(UUID, '-', 8) + '7'
 
 ADD = secrets.token_hex(2)[:3]
 UUID = UUID + ADD + '-'
 
-UUID = UUID + hex(random.randint(8, 11))
+UUID = UUID + format(random.randint(8, 11), 'x')
 
 ADD = secrets.token_hex(2)[:3]
 UUID = UUID + ADD + '-'
