@@ -2,6 +2,8 @@
 import os
 import time
 
+# i refuse to use uuid.uuid7() lol
+
 OUTPUT = ''
 
 def insert(str1, str2, index):
@@ -13,13 +15,7 @@ def insert(str1, str2, index):
     global OUTPUT
     OUTPUT = original[:pos] + new + original[pos:]
 
-def print_in_os(argument):
-    "print in both terminal and action logs"
-    print(argument)
-    os.system(f"echo {argument}")
-
-
-print_in_os("Version 7")
+print("Version: 7")
 
 UUID = ''
 ADD = ''
