@@ -29,19 +29,25 @@ if VERSION in versions or namespace in namespaces:
             case _:
                 raise ValueError(f"ERROR: namespace cannot be '{namespace}'; must be either DNS, URL, OID, "
                           + "or X500.")
+                print(f"::error title=ValueError:: namespace cannot be '{namespace}'; must be either DNS, URL, OID, "
+                      + "or X500.")
         OUTPUT = UUIDTYP(namespace,name)
     else:
         if namespace or name:
             warnings.warn("No namespace or name needed for this version",
                           UserWarning)
+            print("::warning:: No namespace or name needed for this version")
         OUTPUT = UUIDTYP()
 else:
-    if not namespace in namespaces and namespace > "":
+    if not namespace in namespaces:
         raise ValueError(f"ERROR: namespace cannot be '{namespace}'; must be either DNS, URL, OID, "
                           + "or X500.")
+        print(f"::error title=ValueError:: namespace cannot be '{namespace}'; must be either DNS, URL, OID, "
+                      + "or X500.")
     else:
-        if not VERSION in versions and VERSION > "":
-            raise ValueError(f"ERROR: VERSION {VERSION} does not exist")
+        if not VERSION in versions:
+            raise ValueError(f"ERROR: Version '{VERSION}' does not exist")
+            print(f"::error title=ValueError:: Version '{VERSION}' does not exist")
 
 OUTPUTSTR = str(OUTPUT)
 FINAL = uuid.UUID(OUTPUTSTR)
