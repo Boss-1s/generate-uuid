@@ -1,6 +1,7 @@
-"""Import Operating System and UUID"""
+"""UUIDv1,3,4,5,6 generation for gh actions"""
 import os
 import uuid
+import warnings
 
 VERSION = os.environ.get("INPUT_VERSION")
 namespace = os.environ.get("INPUT_NAMESPACE")
@@ -20,7 +21,13 @@ def print_in_os(argument):
 print_in_os(f"Version: {VERSION}")
 
 if VERSION in versions or namespace in namespaces:
-    OUTPUT = UUIDTYP()
+    if VERSION in ["3", "5"]:
+        OUTPUT = UUIDTYP(name, namespace)
+    else:
+        if namespace or name:
+            warnings.warn("No namespace or name needed for this version",
+                          UserWarning)
+        OUTPUT = UUIDTYP()
 else:
     if not namespace in namespaces and namespace > "":
         raise ValueError(f"ERROR: namespace cannot be '{namespace}'; must be either DNS, URL, OID, "
