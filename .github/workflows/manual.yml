@@ -20,7 +20,7 @@ jobs:
     steps:
     # Runs a single command using the runners shell
     - name: Checkout repo
-      uses: actions/checkout@v6.0.2
+      uses: actions/checkout@v6.0.3
 
     - name: test uuid generator
       uses: bossOfCode/generate-uuid@main
