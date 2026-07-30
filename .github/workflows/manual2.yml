@@ -23,7 +23,7 @@ jobs:
     steps:
     - name: test uuid generator
       id: uuid
-      uses: $/generate-uuid
+      uses: $/
       with:
         version: ${{ matrix.uuidv }}
         name: "test123"
