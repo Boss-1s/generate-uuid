@@ -33,10 +33,6 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-    # Runs a single command using the runners shell
-    - name: Checkout repo
-      uses: actions/checkout@v7.0.1
-
     - name: setup python
       uses: actions/setup-python@v7
       with:
@@ -44,7 +40,7 @@ jobs:
 
     - name: test uuid generator
       id: uuid
-      uses: bossOfCode/generate-uuid@main
+      uses: $/generate-uuid
       with:
         version: ${{ inputs.version }}
 
